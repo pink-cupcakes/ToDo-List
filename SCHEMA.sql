@@ -9,8 +9,8 @@ CREATE TABLE tasks (
 	tasks VARCHAR(100),
 	state BOOLEAN,
 	PRIMARY KEY (id)
-)
+);
 
-INSERT INTO tasks (tasks, state) VALUES (mop, false);
-INSERT INTO tasks (tasks, state) VALUES (sweep, false);
-INSERT INTO tasks (tasks, state) VALUES (laundry, false)
+INSERT INTO tasks (tasks, state) VALUES ('mop', false);
+INSERT INTO tasks (tasks, state) VALUES ('sweep', false);
+INSERT INTO tasks (tasks, state) VALUES ('laundry', false);

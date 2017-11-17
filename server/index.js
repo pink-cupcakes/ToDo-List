@@ -7,17 +7,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/getTasks', (req, res) => {
-	db.addTask((err, result) => {
+	db.getTasks((err, result) => {
 		if(err){
+			console.log(err);
 			res.status(500).json({ error: 'message' });
 		} else {
 			res.status(200).json(result);
 		}
 	});
-	res.status(200).send(staticData);
 });
 
 app.post('/addTasks', (req, res) => {
+	console.log(req.body.task);
 	db.addTask(req.body.task, (err, result) => {
 		if(err){
 			res.status(500).json({ error: 'message' });

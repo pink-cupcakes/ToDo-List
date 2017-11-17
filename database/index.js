@@ -12,7 +12,7 @@ con.connect(function(err) {
   console.log("Connected!");
 });
 
-var addTask = (task, cb) => con.query(`INSERT INTO tasks (tasks, state) VALUES (${task}, false)`, (err, result) => {
+var addTask = (task, cb) => con.query(`INSERT INTO tasks (tasks, state) VALUES ('${task}', false)`, (err, result) => {
 	if(err){
 		cb(err, null);
 	} else {
